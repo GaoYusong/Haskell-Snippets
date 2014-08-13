@@ -15,7 +15,9 @@ grahamScan points =
     sortedPoints = Data.List.sortBy pointCompare points
   in
    if length sortedPoints >= 3 then
-     grahamScanImpl (reverse (take 3 sortedPoints)) (drop 3 sortedPoints)
+     reverse (tail (grahamScanImpl
+                    ((head (drop ((length sortedPoints) - 2) sortedPoints)):(grahamScanImpl (reverse (take 2 sortedPoints)) (drop 2 sortedPoints)))
+                    (drop 2 (reverse sortedPoints))))
    else
      sortedPoints
 
