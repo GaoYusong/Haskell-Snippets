@@ -1,4 +1,4 @@
 Haskell-Snippets
 ================
 
-Some snippets write by Haskell
+Some snippets written by Haskell
